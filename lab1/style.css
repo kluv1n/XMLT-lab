@@ -1,0 +1,137 @@
+
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+    border: 1px solid rgb(255, 255, 255);
+    font-weight: bold;
+    margin-right: 5px;           /* задаем отступ от кнопки справа */
+    margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+    width: 50px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    border-radius: 0%;          /* округляем кнопку */              /* отключаем обводку */
+    background: #141414;         /* задаем серый цвет кнопки */
+    color: white;                /* задаем белый цвет текста внутри кнопки */
+    font-size: 1.5rem;           /* увеличим размер шрифта */
+    font-family: 'Times New Roman', Times, serif; /* сменим шрифт */
+    cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                    со стрелки на 'указательный палец' */
+    user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+  } 
+  
+  /* hover - это состояние элемента, когда на него наведен курсор */
+  .my-btn:hover {
+    background: #f50;; /* при наведение курсора на кнопку, она будет окрашена в серый */
+    color: white;
+  }
+  
+  /* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+  .my-btn:active {
+    filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  
+  /* селектор для кнопок первостепенных операций */
+  .my-btn.primary { 
+    background: #96c8e7; /* цвет кнопки оранжевый */
+  }
+  
+  /* селектор для кнопок второстепенных операций */
+  .my-btn.secondary { 
+    background: #b5b4b4; /* цвет кнопки сервый */
+  }
+  
+  /* селектор для кнопки расчета выражения (=) */
+  .my-btn.execute { 
+    width: 110px;          /* сделаем кнопку шире других */
+    border-radius: 0%;   /* подкорректируем округлость */
+  }
+  
+  /* селектор для поля вывода результата */
+  .result { 
+    border: 1px solid rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0%;
+    width: 220px;
+    height: 75px;
+    margin-bottom: 15px;         /* отступ снизу */
+    padding-right: 20px;         /* выступ справа */
+    background: #141414; /* цвет можно задавать и таким образом */
+    text-align: right;           /* примагнитим текст к правой стороне */
+    color: #ffffff;              /* цвет текста белый */
+    font-size: 1.5rem;
+    font-family: Tahoma, Arial, Verdana, sans-serif;
+  }
+
+  .calculator_black{
+    margin: 0 auto;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .text-style{
+    color: #ffffff;
+  }
+
+  body{
+    background-color: rgb(255, 255, 255);
+  }
+
+  main{
+    margin-top: 120px;
+  }
+
+  h1{
+    margin-left: 30px;
+  }
+
+  header{
+    position: fixed;
+    background-color: #000000;
+    color: #ffffff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+  }
+
+  footer{
+    background-color: #000000;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    font-size: 17;
+  }
+
+  .footer_text{
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .git_href {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+  }
+
+  .git_href button{
+    color: #ffffff;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff5c4d 0, #eb469f 26.56%, #8341ef 75%, #3f68f9 100%);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .git_href button:hover{
+    transform: scale(1.1);
+    filter: brightness(0.8);
+  }
+
+  mark{
+    background-color: #3d3d3d;
+    color:#ffffff
+  }
