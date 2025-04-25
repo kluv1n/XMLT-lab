@@ -2,6 +2,7 @@ import { HomeButtonComponent } from '../../components/kp-home-button/index.js';
 import { AddCardButtonComponent } from '../../components/kp-add-button/index.js';
 import { TemplatesCardComponent } from '../../components/kp-film-card/index.js';
 import { KinopoiskContent } from '../kp-film-page/index.js';
+import { TasksCardsComponent } from '../../components/tasks-cards/index.js';
 
 export class MainPage {
     constructor(parent) {
@@ -60,7 +61,11 @@ export class MainPage {
                            class="form-control" style="background-color:#1a1a1a;color:white;border-color:#FF6C37;">
                 </div>
             </div>
-            <div class="cards-container d-flex flex-wrap gap-3 p-3"></div>
+            <div class="cards-container d-flex flex-wrap gap-4 p-4"></div>
+            
+            <div class="tasks-divider" style="height:2px; background-color:#FF6C37; margin:20px 0;"></div>
+            
+            <div id="tasks-footer" style="padding:0 20px 40px;"></div>
         </div>`;
     }
 
@@ -94,21 +99,21 @@ export class MainPage {
         
         this.data.forEach(item => {
             const cardHTML = `
-            <div class="templates-card" data-id="${item.id}" style="width: 250px;">
+            <div class="templates-card" data-id="${item.id}" style="width: 300px;">
                 <div class="card-body-custom">
-                    <h5 class="card-title-custom text-center mb-2" style="font-size:1.1rem">${item.title}</h5>
-                    <div class="card-image-container mb-2">
+                    <h5 class="card-title-custom text-center mb-3">${item.title}</h5>
+                    <div class="card-image-container mb-3">
                         <img src="${item.elements[0].src}" alt="${item.elements[0].title}" 
-                             class="img-fluid rounded" style="height: 150px; width: 100%; object-fit: cover;">
+                             class="img-fluid rounded" style="height: 200px; width: 100%; object-fit: cover;">
                     </div>
-                    <p class="card-text-custom text-center" style="font-size:0.9rem">${item.elements[0].description}</p>
-                    <div class="d-flex justify-content-center gap-2 mt-2">
+                    <p class="card-text-custom text-center">${item.elements[0].description}</p>
+                    <div class="d-flex justify-content-center gap-2 mt-3">
                         <button class="btn btn-sm btn-outline-danger" data-id="${item.id}">
-                            <i class="bi bi-trash"></i>
+                            <i class="bi bi-trash"></i> Удалить
                         </button>
                         <button class="btn btn-sm btn-primary" data-id="${item.id}" 
                                 style="background-color:#FF6C37;border-color:#FF6C37;">
-                            <i class="bi bi-eye"></i>
+                            <i class="bi bi-eye"></i> Просмотр
                         </button>
                     </div>
                 </div>
@@ -123,12 +128,12 @@ export class MainPage {
                 .addEventListener('click', () => this.handleRemoveCard(item.id));
         });
 
-        //кнопка добавления
+        // Кнопка добавления
         const addButtonHTML = `
-        <div class="templates-card" style="width: 250px; height: 340px;">
+        <div class="templates-card" style="width: 300px; height: 312px;">
             <div class="card-body-custom d-flex justify-content-center align-items-center h-100">
                 <button id="add-card-button" type="button" 
-                        style="color:#FF6C37; font-size:80px; border:none; background-color:transparent; width:100%; height:100%;">
+                        style="color:#FF6C37; font-size:100px; border:none; background-color:transparent; width:100%; height:100%;">
                     +
                 </button>
             </div>
@@ -142,7 +147,6 @@ export class MainPage {
         this.parent.innerHTML = '';
         this.parent.insertAdjacentHTML('beforeend', this.getHTML());
 
-        // Добавляем кнопку "Домой"
         const homeButtonContainer = document.getElementById('home-button-container');
         const homeButton = new HomeButtonComponent(homeButtonContainer);
         homeButton.render(() => {
@@ -151,6 +155,10 @@ export class MainPage {
         });
 
         this.renderCards();
+
+        const tasksFooter = document.getElementById('tasks-footer');
+        const tasksCards = new TasksCardsComponent(tasksFooter);
+        tasksCards.render();
 
         document.getElementById('genre-search').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
