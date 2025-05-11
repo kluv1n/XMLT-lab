@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "src": "https://img.freepik.com/free-photo/person-s-hand-holding-ticket-cinema-home-couple_23-2147891726.jpg",
+    "title": "Боевики",
+    "text": "Смешные и легкие фильмы для поднятия настроения"
+  },
+  {
+    "id": 3,
+    "src": "https://img.freepik.com/free-photo/digital-art-moon-buildings-wallpaper_23-2150918703.jpg",
+    "title": "Фантастика",
+    "text": "Экшн и адреналин в каждом кадре"
+  },
+  {
+    "src": "https://img.freepik.com/free-photo/person-s-hand-holding-ticket-cinema-home-couple_23-2147891726.jpg",
+    "title": "Новый жанр",
+    "text": "Описание нового жанра",
+    "id": 4
+  }
+]
