@@ -1,0 +1,26 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kluv1n/XMLT-lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kluv1n/XMLT-lab/issues"
+  },
+  "homepage": "https://github.com/kluv1n/XMLT-lab#readme",
+  "description": ""
+}
